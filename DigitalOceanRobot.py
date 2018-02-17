@@ -14,8 +14,8 @@ class DigitalOceanRobot:
         self.html_handler = Htmlhandler()
 
     def get_table(self, table):
-        attr = self.html_handler.extract_data(table, '//div[@class="bui-Col bui-Col-6@large"]//table//tr//th')
-        tble = self.html_handler.extract_data(table, '//div[@class="bui-Col bui-Col-6@large"]//table//tr/td')
+        attr = self.html_handler.extract_data(table, '//table//tr//th')
+        tble = self.html_handler.extract_data(table, '//table//tr/td')
         self.lst = self.html_handler.split_count(tble, len(attr))
         data = []
         for i in self.lst:
@@ -27,16 +27,16 @@ class DigitalOceanRobot:
         content = self.content.text.split("id=tab-droplets data-bui-tabbed-nav-pane>")
         # takes what's important
         content = html.fromstring(content[1])
+        # getting title or machine names
+        title = self.html_handler.extract_data(content, '//div[@class="bui-Col bui-Col-6@large"]//h2')
+        # extract table as have 2 in one class must do it again and erase the duplicated
         machines = self.html_handler.split_data(content, '//div[@class="bui-Col bui-Col-6@large"]')
         machines.extend(self.html_handler.split_data(html.fromstring(machines[1]), '//div[@class="bui-Col bui-Col-6@large"]//div[@class="bui-u-mb--xlarge"]'))
-        print(machines)
-        # data = {}
-        # for x in machines:
-        #     table = html.fromstring(x)
-        #     name = table.xpath('//div[@class="bui-Col bui-Col-6@large"]//h2')
-        #     data[name[0].text_content()] = self.get_table(table)
-        # print(data)
-
+        del machines[1]
+        data = {}
+        for i, x in enumerate(machines):
+            table = html.fromstring(x)
+            data[title[i]] = self.get_table(table)
 
 
 if __name__ == '__main__':
