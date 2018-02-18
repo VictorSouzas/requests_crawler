@@ -4,17 +4,10 @@ from lxml import html
 from Robot import Robot
 
 
-
 class DigitalOceanRobot(Robot):
 
     def __init__(self, url):
         Robot.__init__(self, url)
-
-    def split_data(self, content, pattern):
-        table = []
-        for i, x in enumerate(content.xpath(pattern)):
-            table.append(html.tostring(x))
-        return table
 
     def split_count(self, data, limit=0, i=0, grouped_data=[], group_data=[]):
         if len(data) == 0:
@@ -33,8 +26,8 @@ class DigitalOceanRobot(Robot):
         return processed_data
 
     def get_table(self, table):
-        attr = self.extract_data(table, '//div[@class="bui-Col bui-Col-6@large"]//table//tr//th')
-        tble = self.extract_data(table, '//div[@class="bui-Col bui-Col-6@large"]//table//tr/td')
+        attr = self.extract_data(table, '//table//tr//th')
+        tble = self.extract_data(table, '//table//tr/td')
         self.lst = self.split_count(tble, len(attr))
         data = []
         for i in self.lst:
@@ -54,9 +47,10 @@ class DigitalOceanRobot(Robot):
         for i, x in enumerate(machines):
             table = html.fromstring(x)
             data[title[i]] = self.get_table(table)
+        print(data.keys())
 
 
 
 if __name__ == '__main__':
-    digital_ocean = DigitalOceanRobot()
+    digital_ocean = DigitalOceanRobot("https://www.digitalocean.com/pricing/#droplet")
     digital_ocean.parse()
