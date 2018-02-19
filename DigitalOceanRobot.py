@@ -10,16 +10,24 @@ class DigitalOceanRobot(Robot):
     def __init__(self, url):
         Robot.__init__(self, url)
 
-    def get_table(self, table):
-        attr = self.extract_data(table, '//tr//th')
-        tds = self.extract_data(table, '//tr/td')
-        lst = self.split_count(tds, len(attr))
+    def get_lines(self, table):
+        attr = self.extract_data(html.fromstring(table), '//tr//th')
+        attr[-1] = "monthly-price"
+        attr.append("hourly-price")
+        trs = self.split_data(html.fromstring(table), '//tbody//tr')
         data = []
-        for i, x in enumerate(lst):
-            if len(re.split('Popular ', x[0])) > 1:
-                x[0] = re.split('Popular ', x[0])[1]
-            data.append(dict(zip(attr, x)))
-        return data
+        for x in trs:
+            data.append(self.extract_data(html.fromstring(x), '//td'))
+        return_data = []
+        for x in data:
+            if len(re.split('Popular', x[0])) == 2:
+                x[0] = re.split('Popular', x[0])[1]
+            x[0] = x[0].strip()
+            split = re.split(" ", x[-1])
+            x[-1] = split[0]
+            x.append(split[2])
+            return_data.append(dict(zip(attr, x)))
+        return return_data
 
     def parse(self):
         # remove javascript garbage
@@ -31,8 +39,7 @@ class DigitalOceanRobot(Robot):
 
         self.data = {}
         for i, x in enumerate(machines):
-            table = html.fromstring(x)
-            self.data[re.split(" ", title[i])[0]] = self.get_table(table)
+            self.data[re.split(" ", title[i])[0]] = self.get_lines(x)
         return self.data
 
 
