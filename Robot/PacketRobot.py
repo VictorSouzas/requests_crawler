@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from lxml import html
-from Robot import Robot
+from Robot.Robot import Robot
 import re
 
 
 class PacketRobot(Robot):
+
     def __init__(self):
         Robot.__init__(self, "https://www.packet.net/bare-metal/")
 

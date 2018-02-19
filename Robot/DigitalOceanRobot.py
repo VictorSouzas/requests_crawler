@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from lxml import html
-from Robot import Robot
+from Robot.Robot import Robot
 import re
 
 
@@ -11,7 +11,7 @@ class DigitalOceanRobot(Robot):
         Robot.__init__(self, "https://www.digitalocean.com/pricing/#droplet")
 
     def __get_lines(self, table):
-        attr = self.extract_data(html.fromstring(table), '//tr//th')
+        attr = ['memory', 'cpu', 'storage', 'bandwidth', 'monthly', 'hourly']
         attr[-1] = "monthly-price"
         attr.append("hourly-price")
         trs = self.split_data(html.fromstring(table), '//tbody//tr')
@@ -26,24 +26,20 @@ class DigitalOceanRobot(Robot):
             split = re.split(" ", x[-1])
             x[-1] = split[0]
             x.append(split[2])
-            return_data.append(dict(zip(attr, x)))
+            return_data.append(x)
         return return_data
 
     def parse(self):
         # remove javascript garbage
-        content = self.content.text.split("id=tab-droplets data-bui-tabbed-nav-pane>")
+        content = self.content.text.split("})(window,document,'script','dataLayer','GTM-KHWBBT');</script>")
         # takes what's important
         content = html.fromstring(content[1])
         title = self.extract_data(content, '//div[@class="bui-Col bui-Col-6@large"]//h2')
         machines = self.split_data(content, '//div[@class="bui-Col bui-Col-6@large"]//table')
-
-        self.data = {}
+        data = []
+        data.append(self.extract_data(content, '//li//a[@href="#tab-droplets"]//div')[0])
+        data.append(self.url)
+        data.append({})
         for i, x in enumerate(machines):
-            self.data[re.split(" ", title[i])[0]] = self.__get_lines(x)
-        return self.data
-
-
-
-if __name__ == '__main__':
-    digital_ocean = DigitalOceanRobot()
-    digital_ocean.parse()
+            data[-1][re.split(" ", title[i])[0]] = self.__get_lines(x)
+        return data

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from Robot import Robot
+from Robot.Robot import Robot
 from lxml import html
 
 
@@ -24,7 +24,7 @@ class VultrRobot(Robot):
             cpu.append(x[0])
             memory.append(x[1])
             bandwidth.append(x[2])
-        print(labels)
+        return labels
 
 
 
