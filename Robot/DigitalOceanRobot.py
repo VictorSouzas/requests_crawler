@@ -7,10 +7,10 @@ import re
 
 class DigitalOceanRobot(Robot):
 
-    def __init__(self, url):
-        Robot.__init__(self, url)
+    def __init__(self):
+        Robot.__init__(self, "https://www.digitalocean.com/pricing/#droplet")
 
-    def get_lines(self, table):
+    def __get_lines(self, table):
         attr = self.extract_data(html.fromstring(table), '//tr//th')
         attr[-1] = "monthly-price"
         attr.append("hourly-price")
@@ -39,11 +39,11 @@ class DigitalOceanRobot(Robot):
 
         self.data = {}
         for i, x in enumerate(machines):
-            self.data[re.split(" ", title[i])[0]] = self.get_lines(x)
+            self.data[re.split(" ", title[i])[0]] = self.__get_lines(x)
         return self.data
 
 
 
 if __name__ == '__main__':
-    digital_ocean = DigitalOceanRobot("https://www.digitalocean.com/pricing/#droplet")
+    digital_ocean = DigitalOceanRobot()
     digital_ocean.parse()
