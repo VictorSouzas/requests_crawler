@@ -29,16 +29,16 @@ class PacketRobot(Robot):
     def normalize(self, data):
         return_data = {}
         for x in data:
-            dt = {x['name']: []}
+            dt = {x['name']: [[]]}
             if 'processor' in x.keys():
-                dt[x['name']].append(x['processor'])
+                dt[x['name']][0].append(x['processor'])
             else:
-                dt[x['name']].append(x['processors'])
-            dt[x['name']].append(x['memory'])
-            dt[x['name']].append(x['storage'])
-            dt[x['name']].append(x['bandwidth'])
-            dt[x['name']].append(x['monthly-price'])
-            dt[x['name']].append(x['hourly-price'])
+                dt[x['name']][0].append(x['processors'])
+            dt[x['name']][0].append(x['memory'])
+            dt[x['name']][0].append(x['storage'])
+            dt[x['name']][0].append(x['bandwidth'])
+            dt[x['name']][0].append(x['monthly-price'])
+            dt[x['name']][0].append(x['hourly-price'])
             return_data.update(dt)
         return return_data
 

@@ -5,8 +5,8 @@ class Plans:
         self.conn = conn
         self.cursor = self.conn.cursor()
 
-    def insert(self, id_machine, cpus, memory, storage, monthly_bandwidth, monthly_price, hourly_price, hash):
-        self.cursor.execute("INSERT INTO plans VALUES((SELECT max(id) FROM plans) + 1, '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s')" % (id_machine, cpus, memory, storage, monthly_bandwidth, monthly_price, hourly_price, hash))
+    def insert(self, id_machine, cpus, memory, storage, monthly_bandwidth, monthly_price, hourly_price, sha256):
+        self.cursor.execute("INSERT INTO plans VALUES((SELECT max(id) FROM plans) + 1, %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s')" % (id_machine, cpus.replace("'","''"), memory, storage, monthly_bandwidth, monthly_price, hourly_price, sha256))
         self.conn.commit()
         return self.cursor.lastrowid
 

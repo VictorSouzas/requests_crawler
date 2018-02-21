@@ -20,6 +20,9 @@ class DigitalOceanRobot(Robot):
             if len(re.split('Popular', x[0])) == 2:
                 x[0] = re.split('Popular', x[0])[1]
             x[0] = x[0].strip()
+            temp = x[0]
+            x[0] = x[1]
+            x[1] = temp
             split = re.split(" ", x[-1])
             x[-1] = split[0]
             x.append(split[2])
