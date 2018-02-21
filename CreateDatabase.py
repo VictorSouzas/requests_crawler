@@ -14,7 +14,7 @@ new_query = "CREATE TABLE IF NOT EXISTS plans" \
             "(id INTEGER PRIMARY KEY, id_machine INTEGER," \
             " cpus VARCHAR, memory VARCHAR, storage VARCHAR," \
             " monthly_bandwidth VARCHAR, monthly_price VARCHAR," \
-            " hourly_price VARCHAR, FOREIGN KEY (id_machine) REFERENCES machine(id))"
+            " hourly_price VARCHAR, hash VARCHAR, FOREIGN KEY (id_machine) REFERENCES machine(id))"
 query.append(new_query)
 for x in query:
     cursor.execute(x)

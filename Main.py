@@ -27,4 +27,6 @@ elif args[0] == '--download' or args[0] == '-d':
     RobotController.save(digital_ocean_data)
     RobotController.save(vultr_data)
     RobotController.save(packet_data)
+elif args[0] == '--view' or args[0] == '-v':
+    pass
 print(args)

@@ -3,10 +3,15 @@
 class Page:
     def __init__(self, conn):
         self.conn = conn
+        self.cursor = self.conn.cursor()
 
     def insert(self, site, service):
-        cursor = self.conn.cursor()
-        cursor.execute("INSERT INTO page VALUES((SELECT max(id) FROM page) + 1, '"+site+"', '"+service+"')")
+        self.cursor.execute("INSERT INTO page VALUES((SELECT max(id) FROM page) + 1, '"+site+"', '"+service+"')")
         self.conn.commit()
-        return cursor.lastrowid
+        return self.cursor.lastrowid
+
+    def select_one(self, site, service):
+        self.cursor.execute("SELECT * FROM page WHERE site= '%s' AND service= '%s'" % (site, service))
+        one = self.cursor.fetchone()
+        return one
 
