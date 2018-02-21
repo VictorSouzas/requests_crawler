@@ -5,7 +5,7 @@ import sys
 import Robot.DigitalOceanRobot as dgo
 import Robot.VultrRobot as vtr
 import Robot.PacketRobot as pkg
-import Controller.DigitalOceanController as dgoController
+import Controller.RobotController as RobotController
 
 
 def help():
@@ -18,11 +18,13 @@ if len(args) == 0:
 if args[0] == '--help' or args[0] == '-h':
     print(help())
 elif args[0] == '--download' or args[0] == '-d':
-    # digital_ocean = dgo.DigitalOceanRobot()
-    # dgoController.save(digital_ocean.parse())
-    # vultr = vtr.VultrRobot()
-    # vultr_data = vultr.parse()
+    digital_ocean = dgo.DigitalOceanRobot()
+    digital_ocean_data = digital_ocean.parse()
+    vultr = vtr.VultrRobot()
+    vultr_data = vultr.parse()
     packet = pkg.PacketRobot()
     packet_data = packet.parse()
-    input("")
+    RobotController.save(digital_ocean_data)
+    RobotController.save(vultr_data)
+    RobotController.save(packet_data)
 print(args)

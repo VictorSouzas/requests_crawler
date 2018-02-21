@@ -34,8 +34,8 @@ class DigitalOceanRobot(Robot):
         title = self.extract_data(content, '//div[@class="bui-Col bui-Col-6@large"]//h2')
         machines = self.split_data(content, '//div[@class="bui-Col bui-Col-6@large"]//table')
         data = []
-        data.append(self.extract_data(content, '//li//a[@href="#tab-droplets"]//div')[0])
         data.append(self.url)
+        data.append(self.extract_data(content, '//li//a[@href="#tab-droplets"]//div')[0])
         data.append({})
         for i, x in enumerate(machines):
             data[-1][re.split(" ", title[i])[0]] = self.__get_lines(x)

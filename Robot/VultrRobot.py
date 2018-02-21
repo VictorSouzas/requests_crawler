@@ -2,7 +2,6 @@
 
 from Robot.Robot import Robot
 from lxml import html
-import numpy as np
 
 
 class VultrRobot(Robot):
@@ -18,6 +17,9 @@ class VultrRobot(Robot):
                     return_data.append([y])
                 continue
             for j, y in enumerate(x):
+                if i == 2:
+                    return_data[j].append(y[0])
+                    continue
                 return_data[j].append(y)
         return return_data
 
@@ -35,14 +37,18 @@ class VultrRobot(Robot):
             cpu.append(x[0])
             memory.append(x[1])
             bandwidth.append(x[2])
+        data = list()
+        data.append(self.url)
+        data.append(self.extract_data(html.fromstring(self.content.text), '//li[@class="active"]')[0])
+        data.append({'None': ''})
         labels = [cpu]
         labels.append(memory)
         labels.append(self.extract_text(content, '//h3'))
         labels.append(bandwidth)
         labels.append(self.extract_tag(content, '//span[@class="package-price"]', '@data-monthly'))
         labels.append(self.extract_tag(content, '//span[@class="package-price"]', '@data-hourly'))
-        labels = self.normalize_data(labels)
-        return labels
+        data[2]['None'] = self.normalize_data(labels)
+        return data
 
 
 

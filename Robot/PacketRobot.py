@@ -27,7 +27,7 @@ class PacketRobot(Robot):
         return return_data
 
     def normalize(self, data):
-        return_data = []
+        return_data = {}
         for x in data:
             dt = {x['name']: []}
             if 'processor' in x.keys():
@@ -39,7 +39,7 @@ class PacketRobot(Robot):
             dt[x['name']].append(x['bandwidth'])
             dt[x['name']].append(x['monthly-price'])
             dt[x['name']].append(x['hourly-price'])
-            return_data.append(dt)
+            return_data.update(dt)
         return return_data
 
     def parse(self):
