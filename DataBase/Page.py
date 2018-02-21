@@ -15,3 +15,6 @@ class Page:
         one = self.cursor.fetchone()
         return one
 
+    def select(self):
+        self.cursor.execute("SELECT * FROM page")
+        return self.cursor.fetchall()

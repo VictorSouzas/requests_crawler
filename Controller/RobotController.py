@@ -35,3 +35,23 @@ def save(data):
             select = plans.select_from_hash(digest)
             if select == None:
                 plans.insert(machine_id, y[0], y[1], y[2], y[3], y[4], y[5], digest)
+
+def read():
+    conn = db.Connect()
+    page = pg.Page(conn.conn)
+    pages = page.select()
+    return_data = list()
+    for x in pages:
+        data = list()
+        data.append(x[1])
+        data.append(x[2])
+        machine = mcn.Machine(conn.conn)
+        machines = machine.select_by_page_id(x[0])
+        for y in machines:
+            rtn_data = list()
+            rtn_data.append(y[2])
+            plan = pln.Plans(conn.conn)
+            rtn_data.append(plan.select_by_machine_id(y[0]))
+            data.append(rtn_data)
+        return_data.append(data)
+    return return_data

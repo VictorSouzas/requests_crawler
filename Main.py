@@ -28,5 +28,15 @@ elif args[0] == '--download' or args[0] == '-d':
     RobotController.save(vultr_data)
     RobotController.save(packet_data)
 elif args[0] == '--view' or args[0] == '-v':
-    pass
+    data = RobotController.read()
+    for x in data:
+        print("\n\nUrl: %s" % (x[0]))
+        print("Service: %s" % (x[1]))
+        for y in x[2:]:
+            print("\nMachine: %s" % (y[0]))
+            print("Plans: ")
+            for z in y[1:]:
+                for a in z:
+                    a = a[2:-1]
+                    print(a)
 print(args)

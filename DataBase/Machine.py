@@ -11,6 +11,11 @@ class Machine:
         return self.cursor.lastrowid
 
     def select_one(self, id_page, name):
-        self.cursor.execute("SELECT * FROM machine WHERE id_page= '%d' AND name= '%s'" % (id_page, name))
+        self.cursor.execute("SELECT * FROM machine WHERE id_page= %d AND name= '%s'" % (id_page, name))
         one = self.cursor.fetchone()
         return one
+
+    def select_by_page_id(self, id):
+        self.cursor.execute("SELECT * FROM machine WHERE id_page= %d" % (id))
+        all_data = self.cursor.fetchall()
+        return all_data

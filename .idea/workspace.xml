@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ae3e19-ce72-47e7-889b-f81c0a97f640" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Controller/RobotController.py" afterPath="$PROJECT_DIR$/Controller/RobotController.py" />
       <change beforePath="$PROJECT_DIR$/DataBase/Machine.py" afterPath="$PROJECT_DIR$/DataBase/Machine.py" />
+      <change beforePath="$PROJECT_DIR$/DataBase/Page.py" afterPath="$PROJECT_DIR$/DataBase/Page.py" />
       <change beforePath="$PROJECT_DIR$/DataBase/Plans.py" afterPath="$PROJECT_DIR$/DataBase/Plans.py" />
-      <change beforePath="$PROJECT_DIR$/Robot/DigitalOceanRobot.py" afterPath="$PROJECT_DIR$/Robot/DigitalOceanRobot.py" />
-      <change beforePath="$PROJECT_DIR$/Robot/PacketRobot.py" afterPath="$PROJECT_DIR$/Robot/PacketRobot.py" />
-      <change beforePath="$PROJECT_DIR$/Robots.db" afterPath="$PROJECT_DIR$/Robots.db" />
+      <change beforePath="$PROJECT_DIR$/Main.py" afterPath="$PROJECT_DIR$/Main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,7 +21,7 @@
     <SUITE FILE_PATH="coverage/requests_crawler$CreateDatabase.coverage" NAME="CreateDatabase Coverage Results" MODIFIED="1519244301526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/requests_crawler$DigitalOcean.coverage" NAME="DigitalOcean Coverage Results" MODIFIED="1519040936672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/requests_crawler$PacketRobot.coverage" NAME="PacketRobot Coverage Results" MODIFIED="1518995719597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/requests_crawler$Main.coverage" NAME="Main Coverage Results" MODIFIED="1519250216909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/requests_crawler$Main.coverage" NAME="Main Coverage Results" MODIFIED="1519255548379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -42,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RobotController.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RobotController.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controller/RobotController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="36" column="83" lean-forward="false" selection-start-line="36" selection-start-column="83" selection-end-line="36" selection-end-column="83" />
+            <state relative-caret-position="135">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
                 <element signature="e#21#50#0" expanded="true" />
               </folding>
@@ -57,24 +55,26 @@
       <file leaf-file-name="Machine.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataBase/Machine.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="93" lean-forward="false" selection-start-line="8" selection-start-column="93" selection-end-line="8" selection-end-column="93" />
+            <state relative-caret-position="285">
+              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
               <folding>
-                <marker date="1519246737589" expanded="true" signature="203:274" ph="INSERT INTO machine... " />
-                <marker date="1519246737589" expanded="true" signature="231:258" ph="SELECT max(i... machine" />
-                <marker date="1519246737589" expanded="true" signature="430:486" ph="SELECT * FRO... page" />
+                <marker date="1519252303030" expanded="true" signature="203:274" ph="INSERT INTO machine... " />
+                <marker date="1519252303030" expanded="true" signature="231:258" ph="SELECT max(i... machine" />
+                <marker date="1519252303030" expanded="true" signature="430:484" ph="SELECT * FRO... page" />
+                <marker date="1519252303030" expanded="true" signature="628:665" ph="SELECT * FRO... machine" />
+                <marker date="1519252303030" expanded="true" signature="628:667" ph="SELECT * FRO... machine" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PacketRobot.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Robot/PacketRobot.py">
+      <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="262">
+              <caret line="39" column="28" lean-forward="true" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
               <folding>
-                <element signature="e#148#206#0" expanded="false" />
+                <element signature="e#44#54#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,46 +83,13 @@
       <file leaf-file-name="Page.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataBase/Page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
               <folding>
-                <marker date="1519240960465" expanded="true" signature="200:282" ph="INSERT INTO page... " />
-                <marker date="1519240960465" expanded="true" signature="225:249" ph="SELECT max(i... page" />
-                <marker date="1519240960465" expanded="true" signature="420:473" ph="SELECT * FRO... page" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VultrRobot.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Robot/VultrRobot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DigitalOceanRobot.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Robot/DigitalOceanRobot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateDatabase.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CreateDatabase.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-              <folding>
-                <marker date="1519241940938" expanded="true" signature="110:197" ph="CREATE TABLE... page" />
-                <marker date="1519241940938" expanded="true" signature="213:381" ph="CREATE TABLE... machine" />
-                <marker date="1519241940938" expanded="true" signature="421:747" ph="CREATE TABLE... plans" />
+                <marker date="1519251609994" expanded="true" signature="200:282" ph="INSERT INTO page... " />
+                <marker date="1519251609994" expanded="true" signature="225:249" ph="SELECT max(i... page" />
+                <marker date="1519251609994" expanded="true" signature="420:473" ph="SELECT * FRO... page" />
+                <marker date="1519251609994" expanded="true" signature="602:620" ph="SELECT * FRO... page" />
               </folding>
             </state>
           </provider>
@@ -131,34 +98,27 @@
       <file leaf-file-name="Plans.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataBase/Plans.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="171" lean-forward="false" selection-start-line="8" selection-start-column="171" selection-end-line="8" selection-end-column="171" />
+            <state relative-caret-position="270">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
-                <marker date="1519249668168" expanded="true" signature="277:380" ph="INSERT INTO plans... " />
-                <marker date="1519249668168" expanded="true" signature="303:328" ph="SELECT max(i... plans" />
-                <marker date="1519249668168" expanded="true" signature="627:663" ph="SELECT * FRO... machine" />
+                <marker date="1519253034114" expanded="true" signature="277:380" ph="INSERT INTO plans... " />
+                <marker date="1519253034114" expanded="true" signature="303:328" ph="SELECT max(i... plans" />
+                <marker date="1519253034114" expanded="true" signature="627:663" ph="SELECT * FRO... machine" />
+                <marker date="1519253034114" expanded="true" signature="801:839" ph="SELECT * FRO... machine" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_sqlite3.py" pinned="false" current-in-tab="false">
-        <entry file="file:///opt/pypy/lib_pypy/_sqlite3.py">
+      <file leaf-file-name="CreateDatabase.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CreateDatabase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="767" column="0" lean-forward="false" selection-start-line="767" selection-start-column="0" selection-end-line="767" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="13" column="48" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="48" />
               <folding>
-                <element signature="e#44#54#0" expanded="true" />
+                <marker date="1519241940938" expanded="true" signature="110:197" ph="CREATE TABLE... page" />
+                <marker date="1519241940938" expanded="true" signature="213:381" ph="CREATE TABLE... machine" />
+                <marker date="1519241940938" expanded="true" signature="421:747" ph="CREATE TABLE... plans" />
               </folding>
             </state>
           </provider>
@@ -214,14 +174,14 @@
         <option value="$PROJECT_DIR$/DataBase/Insert.py" />
         <option value="$PROJECT_DIR$/Controller/DigitalOceanController.py" />
         <option value="$PROJECT_DIR$/Robot/VultrRobot.py" />
-        <option value="$PROJECT_DIR$/DataBase/Page.py" />
-        <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/Robot/PacketRobot.py" />
-        <option value="$PROJECT_DIR$/DataBase/Machine.py" />
         <option value="$PROJECT_DIR$/CreateDatabase.py" />
         <option value="$PROJECT_DIR$/Robot/DigitalOceanRobot.py" />
+        <option value="$PROJECT_DIR$/DataBase/Page.py" />
+        <option value="$PROJECT_DIR$/DataBase/Machine.py" />
         <option value="$PROJECT_DIR$/DataBase/Plans.py" />
         <option value="$PROJECT_DIR$/Controller/RobotController.py" />
+        <option value="$PROJECT_DIR$/Main.py" />
       </list>
     </option>
   </component>
@@ -294,11 +254,6 @@
             <path>
               <item name="requests_crawler" type="b2602c69:ProjectViewProjectNode" />
               <item name="requests_crawler" type="462c0819:PsiDirectoryNode" />
-              <item name="env" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="requests_crawler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="requests_crawler" type="462c0819:PsiDirectoryNode" />
               <item name="Robot" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -309,14 +264,15 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="database.main" />
+    <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
-      <console-settings module-name="requests_crawler" sdk-home="/usr/bin/python3.4">
+      <console-settings module-name="requests_crawler" sdk-home="/usr/bin/python3.4" is-module-sdk="true">
         <option name="mySdkHome" value="/usr/bin/python3.4" />
+        <option name="myUseModuleSdk" value="true" />
         <option name="myModuleName" value="requests_crawler" />
         <option name="myAddSourceRoots" value="true" />
       </console-settings>
@@ -411,7 +367,7 @@
       <module name="requests_crawler" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="-d" />
+      <option name="PARAMETERS" value="-v" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -487,12 +443,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="323" y="0" width="1364" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5485584" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.4969651" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.4969651" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32943144" sideWeight="0.4514416" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32943144" sideWeight="0.4514416" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.4969651" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3474962" sideWeight="0.49127182" order="0" side_tool="false" content_ui="combo" />
@@ -564,6 +521,11 @@
           <line>44</line>
           <option name="timeStamp" value="126" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -572,7 +534,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="127" />
+      <option name="time" value="132" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -800,25 +762,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/Connect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/Insert.py" />
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#44#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///opt/pypy/lib_pypy/_sqlite3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -827,59 +771,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CreateDatabase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-          <folding>
-            <marker date="1519241940938" expanded="true" signature="110:197" ph="CREATE TABLE... page" />
-            <marker date="1519241940938" expanded="true" signature="213:381" ph="CREATE TABLE... machine" />
-            <marker date="1519241940938" expanded="true" signature="421:747" ph="CREATE TABLE... plans" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Robot/DigitalOceanRobot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/Page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <marker date="1519240960465" expanded="true" signature="200:282" ph="INSERT INTO page... " />
-            <marker date="1519240960465" expanded="true" signature="225:249" ph="SELECT max(i... page" />
-            <marker date="1519240960465" expanded="true" signature="420:473" ph="SELECT * FRO... page" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/Machine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="93" lean-forward="false" selection-start-line="8" selection-start-column="93" selection-end-line="8" selection-end-column="93" />
-          <folding>
-            <marker date="1519246737589" expanded="true" signature="203:274" ph="INSERT INTO machine... " />
-            <marker date="1519246737589" expanded="true" signature="231:258" ph="SELECT max(i... machine" />
-            <marker date="1519246737589" expanded="true" signature="430:486" ph="SELECT * FRO... page" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/Plans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="171" lean-forward="false" selection-start-line="8" selection-start-column="171" selection-end-line="8" selection-end-column="171" />
-          <folding>
-            <marker date="1519249668168" expanded="true" signature="277:380" ph="INSERT INTO plans... " />
-            <marker date="1519249668168" expanded="true" signature="303:328" ph="SELECT max(i... plans" />
-            <marker date="1519249668168" expanded="true" signature="627:663" ph="SELECT * FRO... machine" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -901,12 +797,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/Connect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CreateDatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="48" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="48" />
+          <folding>
+            <marker date="1519241940938" expanded="true" signature="110:197" ph="CREATE TABLE... page" />
+            <marker date="1519241940938" expanded="true" signature="213:381" ph="CREATE TABLE... machine" />
+            <marker date="1519241940938" expanded="true" signature="421:747" ph="CREATE TABLE... plans" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/Page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding>
+            <marker date="1519251609994" expanded="true" signature="200:282" ph="INSERT INTO page... " />
+            <marker date="1519251609994" expanded="true" signature="225:249" ph="SELECT max(i... page" />
+            <marker date="1519251609994" expanded="true" signature="420:473" ph="SELECT * FRO... page" />
+            <marker date="1519251609994" expanded="true" signature="602:620" ph="SELECT * FRO... page" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/Machine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding>
+            <marker date="1519252303030" expanded="true" signature="203:274" ph="INSERT INTO machine... " />
+            <marker date="1519252303030" expanded="true" signature="231:258" ph="SELECT max(i... machine" />
+            <marker date="1519252303030" expanded="true" signature="430:484" ph="SELECT * FRO... page" />
+            <marker date="1519252303030" expanded="true" signature="628:665" ph="SELECT * FRO... machine" />
+            <marker date="1519252303030" expanded="true" signature="628:667" ph="SELECT * FRO... machine" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/Plans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <marker date="1519253034114" expanded="true" signature="277:380" ph="INSERT INTO plans... " />
+            <marker date="1519253034114" expanded="true" signature="303:328" ph="SELECT max(i... plans" />
+            <marker date="1519253034114" expanded="true" signature="627:663" ph="SELECT * FRO... machine" />
+            <marker date="1519253034114" expanded="true" signature="801:839" ph="SELECT * FRO... machine" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Controller/RobotController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="36" column="83" lean-forward="false" selection-start-line="36" selection-start-column="83" selection-end-line="36" selection-end-column="83" />
+        <state relative-caret-position="135">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
             <element signature="e#21#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="39" column="28" lean-forward="true" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+          <folding>
+            <element signature="e#44#54#0" expanded="true" />
           </folding>
         </state>
       </provider>

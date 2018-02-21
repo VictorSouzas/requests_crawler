@@ -14,3 +14,8 @@ class Plans:
         self.cursor.execute("SELECT * FROM plans WHERE hash= '%s'" % (hash))
         one = self.cursor.fetchone()
         return one
+
+    def select_by_machine_id(self, id):
+        self.cursor.execute("SELECT * FROM plans WHERE id_machine= %d" % (id))
+        all_data = self.cursor.fetchall()
+        return all_data
