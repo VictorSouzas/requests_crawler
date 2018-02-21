@@ -10,13 +10,11 @@ class PacketRobot(Robot):
     def __init__(self):
         Robot.__init__(self, "https://www.packet.net/bare-metal/")
 
-
-
     def __get_data(self, url, bandwidth):
         robot = Robot(url)
         content = html.fromstring(robot.content.text)
         return_data = {"name": robot.extract_data(content, '//h1')[0]}
-        return_data['bandwith'] = bandwidth
+        return_data['bandwidth'] = bandwidth
         pattern = '//span[@class="price"]//span[@class="price_hourly active"]'
         return_data["hourly-price"] = robot.extract_data(content, pattern)[0]
         pattern = '//span[@class="price"]//span[@class="price_monthly inactive"]'
@@ -28,7 +26,21 @@ class PacketRobot(Robot):
             return_data[self.extract_data(content, '//h5')[0].lower()] = self.extract_data(content, pattern)[0]
         return return_data
 
-
+    def normalize(self, data):
+        return_data = []
+        for x in data:
+            dt = {x['name']: []}
+            if 'processor' in x.keys():
+                dt[x['name']].append(x['processor'])
+            else:
+                dt[x['name']].append(x['processors'])
+            dt[x['name']].append(x['memory'])
+            dt[x['name']].append(x['storage'])
+            dt[x['name']].append(x['bandwidth'])
+            dt[x['name']].append(x['monthly-price'])
+            dt[x['name']].append(x['hourly-price'])
+            return_data.append(dt)
+        return return_data
 
     def parse(self):
         content = html.fromstring(self.content.text)
@@ -36,12 +48,15 @@ class PacketRobot(Robot):
         bandwidth = content.xpath('//span[@class="p7 fc-lig"]//p')[0].text_content()
         bandwidth = re.split('\\$', bandwidth)[1][0:-1]
         machines = self.split_data(content, pattern)
-        data = []
         url = self.extract_tag(machines, '//a', '@href')
+        data = list()
+        data.append(self.url)
+        data.append(content.xpath('//a[@id="server-configs"]//span')[0].text_content())
+        data.append([])
         for x in url:
-            data.append(self.__get_data(x, bandwidth))
+            data[2].append(self.__get_data(x, bandwidth))
+        data[2] = self.normalize(data[2])
         return data
-
 
 
 if __name__ == '__main__':

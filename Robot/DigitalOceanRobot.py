@@ -11,9 +11,6 @@ class DigitalOceanRobot(Robot):
         Robot.__init__(self, "https://www.digitalocean.com/pricing/#droplet")
 
     def __get_lines(self, table):
-        attr = ['memory', 'cpu', 'storage', 'bandwidth', 'monthly', 'hourly']
-        attr[-1] = "monthly-price"
-        attr.append("hourly-price")
         trs = self.split_data(html.fromstring(table), '//tbody//tr')
         data = []
         for x in trs:

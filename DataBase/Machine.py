@@ -6,6 +6,6 @@ class Machine:
 
     def insert(self, id_page, name):
         cursor = self.conn.cursor()
-        cursor.execute("INSERT INTO machine VALUES((SELECT max(id) FROM machine) + 1, \"id_page\", \"name\")")
+        cursor.execute("INSERT INTO machine VALUES((SELECT max(id) FROM machine) + 1, '%d', '%s')" % (id_page, name))
         self.conn.commit()
         return cursor.lastrowid

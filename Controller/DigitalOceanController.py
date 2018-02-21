@@ -14,10 +14,10 @@ def save(data):
     page_id = page.insert(url, service)
     machine_names = data[2].keys()
     machine = mcn.Machine(conn)
+    data = data[2]
     for x in machine_names:
-        machine_id = machine.insert(page_id, data[2][x])
-        data = data[2][x]
+        machine_id = machine.insert(page_id, x)
         plans = pln.Plans(conn)
-        for y in data:
+        for y in data[x]:
             plans.insert(machine_id, y[1], y[0], y[2], y[3], y[4], y[5])
 

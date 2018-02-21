@@ -3,8 +3,8 @@
 import sqlite3
 
 class Connect:
-    def __make_connection(self):
+    def __init__(self):
         self.conn = sqlite3.connect('Robots.db')
-    def get_connection(self):
-        self.__make_connection()
-        return self.conn
+
+    def __del__(self):
+        self.conn.close()
