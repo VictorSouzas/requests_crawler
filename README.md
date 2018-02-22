@@ -18,6 +18,7 @@ run python3 CreateDatabase.py
 
 
 run Main.py 
+
             -d or --donwload     to donwload the data
 
             -v or --view         to view the data
