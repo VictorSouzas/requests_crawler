@@ -6,11 +6,16 @@ requests lib
 lxml lib
 
 install dependencies:
+
 sudo python3 get-pip.py
+
 sudo pip3 install requests
+
 sudo pip3 install lxml
 
+
 run python3 CreateDatabase.py
+
 
 run Main.py 
             -d or --donwload     to donwload the data
