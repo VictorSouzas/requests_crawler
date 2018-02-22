@@ -24,7 +24,7 @@ run python3 CreateDatabase.py
 
 Run:
 
-run Main.py 
+run python3 Main.py 
 
             -d or --donwload     to donwload the data
 
