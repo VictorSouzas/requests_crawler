@@ -55,3 +55,12 @@ def read():
             data.append(rtn_data)
         return_data.append(data)
     return return_data
+
+def remove():
+    conn = db.Connect()
+    page = pg.Page(conn.conn)
+    page.delete()
+    machine = mcn.Machine(conn.conn)
+    machine.delete()
+    plan = pln.Plans(conn.conn)
+    plan.delete()

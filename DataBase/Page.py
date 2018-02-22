@@ -6,7 +6,8 @@ class Page:
         self.cursor = self.conn.cursor()
 
     def insert(self, site, service):
-        self.cursor.execute("INSERT INTO page VALUES((SELECT max(id) FROM page) + 1, '"+site+"', '"+service+"')")
+        self.cursor.execute("INSERT INTO page VALUES((SELECT max(id) FROM page) + 1, '%s', '%s')"
+                            % (site, service))
         self.conn.commit()
         return self.cursor.lastrowid
 
@@ -18,3 +19,7 @@ class Page:
     def select(self):
         self.cursor.execute("SELECT * FROM page")
         return self.cursor.fetchall()
+
+    def delete(self):
+        self.cursor.execute("DELETE FROM page")
+        self.conn.commit()
